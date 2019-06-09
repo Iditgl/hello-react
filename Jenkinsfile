@@ -8,8 +8,8 @@ pipeline {
   stages {
     stage('Clone Git') {
       steps {
-        #sh "git clone -b dev https://github.com/Iditgl/react-hello-world.git"
-        #git 'https://github.com/Iditgl/react-hello-world.git'
+        //sh "git clone -b dev https://github.com/Iditgl/react-hello-world.git"
+        //git 'https://github.com/Iditgl/react-hello-world.git'
         git 'https://github.com/Iditgl/hello-react.git'
       }
     }
