@@ -6,12 +6,13 @@ pipeline {
   }
   agent any
   stages {
-    #stage('Clone Git') {
-    #  steps {
-    #    sh "git clone -b dev https://github.com/Iditgl/react-hello-world.git"
+    stage('Clone Git') {
+      steps {
+        #sh "git clone -b dev https://github.com/Iditgl/react-hello-world.git"
         #git 'https://github.com/Iditgl/react-hello-world.git'
-    #  }
-    #}
+        git 'https://github.com/Iditgl/hello-react.git'
+      }
+    }
     stage('Start Docker Service') {
       steps {
         sh "sudo systemctl enable docker"
