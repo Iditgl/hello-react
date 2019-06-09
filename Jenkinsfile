@@ -22,14 +22,13 @@ pipeline {
     stage('Build image') {
       steps {
         script {
-        //app = sh "sudo docker build -t ${env.registry}:latest ."
-	app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} ."    
+	app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} -t ${env.registry}:latest ."    
       }
     }
 }
     stage('Publish Image') {
       steps {
-         // sh "sudo docker push ${env.registry}:latest"
+           sh "sudo docker push ${env.registry}:latest"
            sh "sudo docker push ${env.registry}:${BUILD_NUMBER}"
         }
       }
