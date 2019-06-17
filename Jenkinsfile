@@ -35,7 +35,9 @@ pipeline {
     
     stage('Deploy image to k8s') {
       steps {
-           sh "sudo kubectl apply -f ./client-deployment.yaml"
+           //sh "sudo kubectl apply -f ./client-deployment.yaml"
+            sh "sudo kubectl apply -f ./deployment.yaml"
+            sh "sudo kubectl apply -f ./lb.yaml"
         }
       } 
     //stage('Deploy image to k8s') { 
