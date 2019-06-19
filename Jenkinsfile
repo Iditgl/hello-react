@@ -37,7 +37,7 @@ pipeline {
       steps {
            //sh "sudo kubectl apply -f ./client-deployment.yaml"
             sh "sudo kubectl apply -f ./deployment.yaml"
-            //sh "sudo kubectl apply -f ./lb.yaml"
+            sh "sudo kubectl apply -f ./lb.yaml"
             //sh "chmod +x lb.py"
             //sh "./lb.py"
         }
