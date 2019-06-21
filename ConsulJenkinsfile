@@ -6,11 +6,11 @@ pipeline {
   }
   agent any
   stages {
-    stage('Git Clone') {
-      steps {
-        git 'https://github.com/hashicorp/consul-helm.git'
-      }
-    }
+#    stage('Git Clone') {
+#      steps {
+#        git 'https://github.com/hashicorp/consul-helm.git'
+#      }
+#    }
     stage('Install Consul') {
       steps {
         sh "chmod +x consul.sh"
