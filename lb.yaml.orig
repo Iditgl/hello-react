@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-hello-world
+  namespace : default
+  labels:
+    app: react-hello-world
+spec:
+  ports:
+  - name: tcp
+    port: 3000
+    protocol : TCP
+    targetPort: 3000
+  selector:
+    app: react-hello-world
+  type: LoadBalancer

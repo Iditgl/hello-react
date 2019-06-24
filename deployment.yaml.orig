@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: react-deployment
+  annotations:
+    "consul.hashicorp.com/service-name": "React-HelloWorld"
+    "consul.hashicorp.com/service-port": "3000"
+    "consul.hashicorp.com/service-tags": "app"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: react
+  template:
+    metadata:
+      labels:
+        component: react
+        app: react-hello-world
+    spec:
+      containers:
+        - name: react-hello-world
+          image: iditg/hello-world:latest
+          ports:
+            - containerPort: 3000
