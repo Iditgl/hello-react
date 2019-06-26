@@ -1,32 +1,15 @@
 {
-  "name": "hello-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "core-util-is": "^1.0.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node src"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "express": "4.15.3",
+    "prom-client": "9.1.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "author": "IditGL",
+  "license": ""
 }
