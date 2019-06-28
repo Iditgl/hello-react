@@ -16,13 +16,13 @@ spec:
         "consul.hashicorp.com/service-name": "React-HelloWorld"
         "consul.hashicorp.com/service-tags": "application"
         "consul.hashicorp.com/connect-inject": "true"
-        "consul.hashicorp.com/connect-service-protocol": "3000" 
+        "consul.hashicorp.com/connect-service-protocol": "80" 
     spec:
       containers:
         - name: react-hello-world
           image: iditg/hello-world:latest
           ports:
-            - containerPort: 3000
+            - containerPort: 80
         
         - name: prometheus-statsd
           image: prom/statsd-exporter:latest
