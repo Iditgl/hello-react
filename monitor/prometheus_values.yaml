@@ -2,7 +2,7 @@ server:
   service:
     type: LoadBalancer
   global:
-    scrape_interval: 10s
+    scrape_interval: 1s
 extraScrapeConfigs: |
   - job_name: 'sample-job'
     scrape_interval: 1s
@@ -12,4 +12,10 @@ extraScrapeConfigs: |
       - action: keep
         source_labels: [__meta_kubernetes_pod_container_name]
         regex: "prometheus-statsd"
-
+   - job_name: 'test'
+     kubernetes_sd_configs:
+     - role: endpoints
+     relabel_configs:
+     - action: labelmap
+       source_labels: [__meta_kubernetes_service_name]
+       regex: react-hello-world
