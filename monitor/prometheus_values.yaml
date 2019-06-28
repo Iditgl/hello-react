@@ -2,9 +2,10 @@ server:
   service:
     type: LoadBalancer
   global:
-    scrape_interval: 1s
+    scrape_interval: 10s
 extraScrapeConfigs: |
    - job_name: 'test'
+     scrape_interval: 1s
      kubernetes_sd_configs:
      - role: endpoints
      relabel_configs:
