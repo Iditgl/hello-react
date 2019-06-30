@@ -10,7 +10,7 @@ pipeline {
       steps {
         //sh "git clone -b dev https://github.com/Iditgl/react-hello-world.git"
         //git 'https://github.com/Iditgl/react-hello-world.git'
-        git branch "${env.BRANCH}" 'https://github.com/Iditgl/hello-react.git'
+        git 'https://github.com/Iditgl/hello-react.git'
       }
     }
     stage('Start Docker Service') {
