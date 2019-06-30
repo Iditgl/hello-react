@@ -10,7 +10,7 @@ pipeline {
       steps {
         //sh "git clone -b dev https://github.com/Iditgl/react-hello-world.git"
         //git 'https://github.com/Iditgl/react-hello-world.git'
-        git 'https://github.com/Iditgl/hello-react.git'
+        git branch "${env.BRANCH}" 'https://github.com/Iditgl/hello-react.git'
       }
     }
     stage('Start Docker Service') {
@@ -22,7 +22,7 @@ pipeline {
     stage('Build image') {
       steps {
         script {
-	        app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} -t ${env.registry}:latest ./src"    
+	        app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} -t ${env.registry}:latest ./src"
       }
     }
 }
