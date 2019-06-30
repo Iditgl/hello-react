@@ -22,7 +22,7 @@ pipeline {
     stage('Build image') {
       steps {
         script {
-	        app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} -t ${env.registry}:latest .src/Dockerfile"    
+	        app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} -t ${env.registry}:latest ./src"    
       }
     }
 }
