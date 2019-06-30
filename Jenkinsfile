@@ -18,11 +18,11 @@ pipeline {
         sh "sudo systemctl enable docker"
         sh "sudo systemctl start docker"
       }
-    } 
+    }
     stage('Build image') {
       steps {
         script {
-	app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} -t ${env.registry}:latest ."    
+	        app = sh "sudo docker build -t ${env.registry}:${BUILD_NUMBER} -t ${env.registry}:latest .src/Dockerfile"    
       }
     }
 }
@@ -32,7 +32,7 @@ pipeline {
            sh "sudo docker push ${env.registry}:${BUILD_NUMBER}"
         }
       }
-    
+
     stage('Deploy image to k8s') {
       steps {
            //sh "sudo kubectl apply -f ./client-deployment.yaml"
@@ -41,9 +41,9 @@ pipeline {
             //sh "chmod +x lb.py"
             //sh "./lb.py"
         }
-      } 
-    //stage('Deploy image to k8s') { 
+      }
+    //stage('Deploy image to k8s') {
     //kubernetesDeploy(kubeconfigId: 'k8s_master',configs: 'my_proj_dep.yml',enableConfigSubstitution: true)
     //}
-      }    
+      }
 }
